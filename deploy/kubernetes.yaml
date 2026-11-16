@@ -23,7 +23,7 @@ metadata:
 spec:
   schedule: "0 8 * * *"
   timeZone: Asia/Bangkok
-  suspend: true
+  suspend: false
   concurrencyPolicy: Forbid
   startingDeadlineSeconds: 3600
   successfulJobsHistoryLimit: 3
@@ -53,7 +53,6 @@ spec:
               envFrom:
                 - secretRef:
                     name: horizon-ai
-                    optional: true
               securityContext:
                 allowPrivilegeEscalation: false
                 capabilities:

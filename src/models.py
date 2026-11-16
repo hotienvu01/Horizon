@@ -198,6 +198,7 @@ class AIConfig(BaseModel):
     model: str
     base_url: Optional[str] = None
     api_key_env: str
+    api_mode: Literal["chat-completions", "responses"] = "chat-completions"
     chatgpt_account: Optional[str] = None
     extra_body: Optional[Dict[str, Any]] = None
     temperature: float = 0.3

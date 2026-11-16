@@ -591,6 +591,9 @@ def _uses_anthropic_compatible_api(config: AIConfig) -> bool:
 
 def _create_single_client(config: AIConfig) -> AIClient:
     """Create a single AI client instance."""
+    if config.provider == AIProvider.OPENAI and config.api_mode == "responses":
+        from .responses import ResponsesClient
+        return ResponsesClient(config)
     if config.provider == AIProvider.OPENAI_CHATGPT:
         from .chatgpt import ChatGPTClient
         return ChatGPTClient(config)

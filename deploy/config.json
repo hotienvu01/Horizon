@@ -1,8 +1,10 @@
 {
   "ai": {
     "provider": "openai",
-    "model": "gpt-4o-mini",
-    "api_key_env": "OPENAI_API_KEY"
+    "model": "gpt-6.1-sol",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "http://192.168.1.10:30080/v1",
+    "api_mode": "responses"
   },
   "sources": {
     "rss": [
