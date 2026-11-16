@@ -1580,7 +1580,8 @@ class TestHTTPStatusHandling:
 
         mock_console = MagicMock()
 
-        with patch("httpx.AsyncClient") as mock_client_cls:
+        with patch("src.services.webhook.safe_request", new_callable=AsyncMock, return_value=mock_response), \
+             patch("httpx.AsyncClient") as mock_client_cls:
             mock_client = AsyncMock()
             mock_client.get = AsyncMock(return_value=mock_response)
             mock_client.__aenter__ = AsyncMock(return_value=mock_client)
